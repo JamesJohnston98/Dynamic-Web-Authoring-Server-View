@@ -1,0 +1,21 @@
+<?php
+
+$name = $_post["name"];
+$age = $_post["range"];
+
+If($name = ""){
+   print "You must enter a valid name";
+}
+else {
+   if($age = "a"){
+	print "user is too young to become a member";
+   }
+   if($age == "b"){
+        print "user must pay standard fees;
+   }
+   if($age == "c"){
+        print "user can receive a 10% discount on fees";
+   }
+}
+
+?>

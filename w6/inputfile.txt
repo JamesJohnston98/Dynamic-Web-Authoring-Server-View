@@ -1,0 +1,4 @@
+apples are red.
+Bannas are yellow.
+Carrots are orange.
+Dates are brown.

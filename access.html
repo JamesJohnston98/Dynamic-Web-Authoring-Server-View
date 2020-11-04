@@ -1,0 +1,369 @@
+<!DOCTYPE html> 
+
+<html> 
+
+  <head>		
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+
+    <title>COM427.2004 Assignments Access Page</title> 
+
+    <!-- This web page should be located as in the example address below (only the student id number will be different)  -->
+
+    <!-- https://scm.ulster.ac.uk/~B00xxxxx/com427_1516/access.html                               -->
+ 
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="date_time.js"></script>
+
+    <style type="text/css">
+
+      body {background-color: rgb(248, 248, 255);}
+
+      #liveExample {
+        padding: 1em;
+        background-color: #EED;
+        border: 1px solid #CCC;
+        max-width: 400px;
+        margin: auto;
+        margin-top: 3em;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+        -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+        box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, .3);
+      }
+
+      * {
+        color: #000077;
+        font-family: arial;
+        text-decoration: none;
+        line-height: 1.6em;
+        margin: 0;
+      }
+	  
+      div {
+        display: block;
+      }
+
+      #browserInfo {
+        position: relative; 
+        top: 1em;
+        font-size: x-small;
+      }
+
+      .highlight {
+        font-weight: bold;
+      }
+
+      /*  .button-link css below using CSS3 styling - sourced (with minor modifications)
+          from http://www.usabilitypost.com/2012/01/10/pressed-button-state-with-css3/    */
+
+      .button-link {
+        font-size: small;
+        padding: 3px 6px;
+        background: #4479BA;
+        color: #FFF;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        border: solid 1px #20538D;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+        -webkit-transition-duration: 0.2s;
+        -moz-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      .button-link:hover {
+        background: #356094;
+        border: solid 1px #2A4E77;
+        text-decoration: none;
+      }
+
+      .button-link:active {
+        -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+        background: #2E5481;
+        border: solid 1px #203E5F;
+      }
+
+    </style>
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+        $("#browserInfo").append("<p class='highlight'>Browser details detected at " + getClockTime() + "</p>");
+
+		/* USER AGENT */
+		if (navigator.userAgent)
+        {
+			$("#browserInfo").append("<span>User-agent:" + navigator.userAgent + ". </span>");
+        }
+
+        else
+        {
+        $("#browserInfo").append("<span>User-a	gent: Not Specified. </span>");
+		}
+		  
+		/* PLATFORM */		
+        $("#browserInfo").append("<span>Platform: "  + navigator.platform + ". </span>");
+
+		/* COOKIES ENABLED? */
+        if (navigator.cookieEnabled)
+        {
+			$("#browserInfo").append("<span>Cookies: Enabled. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Cookies: Not Enabled. </span>");
+        }
+		  
+		/* JAVA ENABLED? */
+		if (navigator.javaEnabled)
+        {
+			$("#browserInfo").append("<span>Java: Enabled. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Java: Not Enabled. </span>");
+        }
+
+		/* PROTOCOL */
+		if (location.protocol)
+        {
+			$("#browserInfo").append("<span>Protocol: " + location.protocol + ". </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Protocol: Not Specified. </span>");
+        }
+		
+		/* PROTOCOL */
+		if (location.port)
+        {
+			$("#browserInfo").append("<span>Port: " + location.port + ". </span>");
+		}
+
+        else
+        {
+			if(location.protocol == "http:" && location.port == "")
+			{
+				$("#browserInfo").append("<span>Port: 80. </span>");
+			}
+			
+			else
+			{
+				$("#browserInfo").append("<span>Port: Not Specified. </span>");
+			}
+		}
+		
+		/* HOSTNAME */
+		if (location.hostname)
+        {
+			$("#browserInfo").append("<span>Hostname: " + location.hostname + ". </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Hostname: Not Specified. </span>");
+		}
+		
+		/* PATHNAME */
+		if (location.pathname)
+        {
+			$("#browserInfo").append("<span>Path: " + location.pathname + ". </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Path: Not Specified. </span>");
+		}
+		
+		/* HISTORY LENGTH */
+		if (location.length)
+        {
+			$("#browserInfo").append("<span>Number of URLs visted this session: " + history.length + ". </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Number of URLs visted this session: Not Specified. </span>");
+		}
+		
+		/* SCREEN HEIGHT */
+		if (screen.height)
+        {
+			$("#browserInfo").append("<span>Screen Height: " + screen.height + "px. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Screen Height: Not Specified. </span>");
+		}
+		
+		/* SCREEN WIDTH */
+		if (screen.height)
+        {
+			$("#browserInfo").append("<span>Screen Width: " + screen.width + "px. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Screen Width: Not Specified. </span>");
+		}
+		 
+		/* BROWSER HEIGHT */
+		if (window.outerHeight)
+        {
+			$("#browserInfo").append("<span>Browser Height: " + window.outerHeight + "px. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Browser Height: Not Specified. </span>");
+		}
+		
+		/* BROWSER WIDTH */
+		if (window.outerWidth)
+        {
+			$("#browserInfo").append("<span>Browser Width: " + window.outerWidth + "px. </span>");
+		}
+
+        else
+        {
+			$("#browserInfo").append("<span>Browser Width: Not Specified. </span>");
+		}
+		
+		 
+
+      });     
+
+    </script>
+  </head>
+
+  <body>
+    <div id="liveExample">
+    <div>
+
+        <h2>Weekly lab exercises</h2>
+        <ul>
+        	<li><a href="Weekly/w1/w1.zip"> Week1 zip file  (w1.zip)</a>     </li> 
+        	<li><a href="Weekly/w2/w2.zip"> Week2 zip file  (w2.zip)</a>     </li> 
+        	<li><a href = "Weekly/w3/w3.zip">Week3 zip file (w3.zip)</a></li> 
+            <li><a href = "Weekly/w4/w4.zip">Week4 zip file (w4.zip)</a></li> 
+            <li><a href = "Weekly/w5/w5.zip">Week5 zip file (w5.zip)</a></li>
+            <li><a href = "Weekly/w6/w6.zip">Week6 zip file (w6.zip)</a></li>
+            <li><a href = "Weekly/w6/w6_extra.zip">Week6_extra zip file (w6_extra.zip)</a></li>
+            <li><a href = "Weekly/w7/w7.zip">Week7 zip file (w7.zip)</a></li>
+            <li><a href = "Weekly/w8/w8.zip">Week8 zip file (w8.zip)</a></li>
+            <li><a href = "Weekly/w10/w10.zip">Week10 zip file (w10.zip)</a></li>
+            <li><a href = "Weekly/w11/w11.zop">Week11 zip file (w11.zip)</a></li>
+		</ul>
+      </div>
+
+      <div>
+
+        <h2>COM427.2018/19 Assignments</h2>
+
+      </div>
+
+      <!-- Links to generic groups and documents should be changed to point to assignment work -->
+
+
+
+      <form>
+ 
+        <fieldset>
+
+          <legend>Assignment - 1</legend>
+        <h3>Members: </h3> 
+        <ul>
+        	<li>Ellen McKiernan:B00730239 (<a href="http://scm.ulster.ac.uk/~B000730239/com427_1819/as1/as1.html">link to access.html</a>)</li> <!-- your name and  id number -->
+        	<li>James Johnston: B00730860 (<a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM427_1819/as1/as1.html">link to access.html</a>)</li><!-- your name and  id number -->
+		</ul>
+		  <a href="https://scm.ulster.ac.uk/~B00730860/workspace/COM427_1819/as1/as1.html" class="button-link" target="_blank">Assignment 1.A</a>
+		  <a href="https://scm.ulster.ac.uk/~B00730239/workspace/COM427_1819/as1/as1.html" class="button-link" target="_blank">Assignment 1.B</a> 
+          <a href="as1/self_assessment.pdf" class="button-link">self assessment</a>
+<br/>		  
+          
+          <a href="as1/assignment1.zip" class="button-link">assignment1.zipfile</a>
+          
+                
+        </fieldset>
+
+      </form>
+
+      <form>
+ 
+        <fieldset>
+
+          <legend>Assignment  - 2</legend>
+        <h3>Members: </h3> 
+        <ul>
+        	<li>Daniel Craig: B00007 (<a href="http://scm.ulster.ac.uk/~B0007/com427_1516/access.html">link to access.html</a>)</li> <!-- your name and  id number -->
+        	<li>Tom Cruise: B00008 (<a href="http://scm.ulster.ac.uk/~B0007/com427_1516/access.html">link to access.html</a>)</li><!-- your name and  id number -->  
+		</ul>
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_02/com1a.html" class="button-link" target="_blank">Assignment 2.A</a>
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_02/com1b.html" class="button-link" target="_blank">Assignment 2.B</a> 
+		  ... 
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_02/com1b.html" class="button-link" target="_blank">Assignment 2.X</a>
+<br/>		  
+          <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_02/fan.mov" class="button-link" target="_blank">1 minute's Video</a>
+<br />
+          <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_02/assignment2.zip" class="button-link" target="_blank">assignment2.zip  file</a>
+          
+
+        </fieldset>
+
+      </form>
+
+  <form>
+ 
+        <fieldset>
+
+          <legend>Assignment  - 3</legend>
+        <h3>Members: </h3> 
+        <ul>
+        	<li>Daniel Craig: B00007 (<a href="http://scm.ulster.ac.uk/~B0007/com427_1516/access.html">link to access.html</a>)</li> <!-- your name and  id number -->
+        	<li>Tom Cruise: B00008 (<a href="http://scm.ulster.ac.uk/~B0007/com427_1516/access.html">link to access.html</a>)</li><!-- your name and  id number -->  
+		</ul>
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_03/com1a.html" class="button-link" target="_blank">Assignment 3.A</a>
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_03/com1b.html" class="button-link" target="_blank">Assignment 3.B</a> 
+		  ... 
+		  <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_03/com1b.html" class="button-link" target="_blank">Assignment 3.X</a>
+<br/>		  
+          <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_03/fan.mov" class="button-link" target="_blank">1 minute's Video</a>
+<br />
+          <a href="https://scm.ulster.ac.uk/~B0007/com427_1617/assignment_427_03/assignment3.zip" class="button-link" target="_blank">assignment3.zip  file</a>
+          
+
+        </fieldset>
+
+      </form>
+
+       Please ensure you and your partner have same copy of zip file and report. 
+      <div>
+
+        <div id="browserInfo"></div> 
+
+      </div>   		    	
+
+    </div>
+
+  </body>
+
+</html>
+
