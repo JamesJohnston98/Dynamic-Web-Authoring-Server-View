@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2_b.html</title>
+<link rel="stylesheet" href='style.css'>
+</head>
+<body>
+
+<!--See the total number of bookings that have been recevied by the company  -->
+<h1>Each form will carry out one of the required SQL tasks<br />
+These will interact with the MovieHouse Database.</h1>
+
+<div class="task">
+<h2>SQL 7</h2>
+              <p>  SQL query lets users delete Records.  </p>
+
+              <form action="sql7.php" method="post">
+
+                        <caption>  DELETE from</caption>
+                                           <select name="table">
+                                                  <option value="actors">actors</option>
+                                                  <option value="actormovies">actormovies</option>
+                                                  <option value="movies">movies</option>
+                                                  <option value="bookings">bookings</option>
+                                                  <option value="customer">customer</option>
+                                                  <option value="cinemashows">cinemashows</option>
+                                                  <option value="cinema">cinema</option>
+                                                </select>
+                              <br>
+
+
+                          <caption>where</caption>
+                                                <input type="text" name="where" width="40px"  placeholder="bookingID ='308'">
+                              <br>
+                              <br>
+                                                <input type="submit" name="mybutton" value="DELETE">
+                </form>
+</div>
+</body></html>

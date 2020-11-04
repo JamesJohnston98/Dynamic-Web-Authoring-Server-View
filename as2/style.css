@@ -1,0 +1,16 @@
+body{
+  padding-left: 50px;
+  font-family: sans-serif;
+}
+
+p{
+  font-family: sans-serif;
+}
+
+.task{
+  margin-top: 50px;
+  margin-bottom:  50px;
+  border: solid 5px black;
+  padding: 15px;
+  width: 800px;
+}

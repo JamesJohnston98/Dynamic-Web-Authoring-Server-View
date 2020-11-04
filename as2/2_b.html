@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2_b.html</title>
+<link rel="stylesheet" href='style.css'>
+</head>
+<body>
+
+<!--See the total number of bookings that have been recevied by the company  -->
+<h1>Each form will carry out one of the required SQL tasks<br />
+These will interact with the MovieHouse Database.</h1>
+
+<div class="task">
+<h2>SQL 1</h2>
+
+                    <p>
+                    An SQL query getting all the records for the movies table:
+                    </p>
+                    <form action="sql1.php"  method="post">
+                                <input type="submit" name="mybutton" value="Show movies records">
+                    </form>
+
+
+
+</div>
+
+<div class="task">
+<h2>SQL 2</h2>
+                  <form action = "sql2.php" method = "post">
+                                      <h3>Check the total number of bookings from each customer(Click the button)</h3><br />
+                                      <input type = "submit" value = "Check Number of Bookings">
+
+                      </form>
+
+
+<!-- the user clicks the button and they will see the number of films on show within the cinemas-->
+
+                <form action = "sql2.php" method = "post">
+                <h3>Check the number of films in each cinema</h3><br />
+
+                                    <input type = "submit" value = "Check total films">
+                    </form>
+</div>
+
+<div class="task">
+<h2>SQL 3</h2>
+
+                <p>  An SQL query showing the amount of actors in each movies:</p>
+                <form action="sql3.php"  method="post">
+
+                                  <input type="submit" name="mybutton" value="Show amount of actors in Films">
+                </form>
+
+<!-- This will display the results where a condition is met within the SQL query that has been created. Makes use of the input to process the result. -->
+</div>
+
+<div class="task">
+<h2>SQL 4</h2>
+              <form action = "sql4.php" method = "post">
+
+                <h3>Check Film and Cinema availability</h3><br />
+                                      <select name = "cinemalist">
+                                      <option value = "">Select a cinema</option>
+                                      <option value = "Coleraine">Coleraine</option>
+                                      <option value = "Glengormley">Glengormley</option>
+                                      <option value = "Dublin Road">Dublin Road</option>
+                                      <option value = "Maghera">Maghera</option>
+                                      <option value = "City Side">CitySide</option>
+                                      </select>
+
+                                          <input type = "submit" value = "check cinema">
+                  </form>
+
+</div>
+
+<div class="task">
+<h2>SQL 5</h2>
+
+              <p>SQL query that lets users update Records.</p>
+                <form action="sql5.php" method="post">
+
+                                <caption>  update </caption>
+                                           <select name="table">
+                                                    <option value="actors">actors</option>
+                                                    <option value="actormovies">actormovies</option>
+                                                    <option value="movies">movies</option>
+                                                    <option value="bookings">bookings</option>
+                                                    <option value="customer">customer</option>
+                                                    <option value="cinemashows">cinemashows</option>
+                                                    <option value="cinema">cinema</option>
+                                          </select>
+                                                <br>
+
+                                <caption>set</caption>
+
+                                                <input type="text" name="changes" width="40px" placeholder="filmID ='201'">
+                                                <br>
+
+                                <caption>where</caption>
+                                                <input type="text" name="where" width="40px"  placeholder="bookingID ='308'">
+                                                <br>
+                                                <br>
+                                                <input type="submit" name="mybutton" value="Update record">
+                </form>
+
+<!--This form will allow the user to update the database with a brand new film information added to the movies table when it is completed and the button clicked. -->
+</div>
+
+<div class="task">
+<h2>SQL 6</h2>
+              <form action = "sql6.php" method = "post">
+              <h3>Insert New Film Information</h3>
+                                        FilmID(Int): <input type = "text" id = "filmid" name = "filmid" placeholder = "211"/><br /><br />
+                                        FilmName: <input type = "text" id = "filmname" name = "filmname" placeholder = "A Dogs Way Home" /><br /><br />
+
+                                        <input type = "submit" value = "Add Film information">
+                  </form>
+
+
+</div>
+
+<div class="task">
+<h2>SQL 7</h2>
+              <p>  SQL query lets users delete Records.  </p>
+
+              <form action="sql7.php" method="post">
+
+                        <caption>  DELETE from</caption>
+                                           <select name="table">
+                                                  <option value="actors">actors</option>
+                                                  <option value="actormovies">actormovies</option>
+                                                  <option value="movies">movies</option>
+                                                  <option value="bookings">bookings</option>
+                                                  <option value="customer">customer</option>
+                                                  <option value="cinemashows">cinemashows</option>
+                                                  <option value="cinema">cinema</option>
+                                                </select>
+                              <br>
+
+
+                          <caption>where</caption>
+                                                <input type="text" name="where" width="40px"  placeholder="bookingID ='308'">
+                              <br>
+                              <br>
+                                                <input type="submit" name="mybutton" value="DELETE">
+                </form>
+</div>
+</body></html>
